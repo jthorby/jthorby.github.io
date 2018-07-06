@@ -1,10 +1,8 @@
-html {
+html, body {
+    color: white;
+    height: 100%;
     margin: 0;
     padding: 0;
-    color: white;
-}
-
-body {
 	font-family: Tahoma, Geneva, sans-serif;
 }
 
@@ -23,19 +21,34 @@ h1 {
     clear: both;
 }
 
-.keyImage img {
-	padding: 0;
-    display: block;
-    margin: 0 auto;
-    max-height: 100%;
-    max-width: 100%;
+.image1 {
+	background-image: url("eileenDonan.JPG");
 }
 
-.frontImageContent {
-	position: absolute; 
+.image2 {
+	background-image: url("skyeSunRise.JPG");
+}
+
+.background {
+	height: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding: 0;
+	margin: 0;
+}
+
+.firstPageContent {
+	position: relative;
    	top: 67%; 
    	left: 10%; 
    	width: 100%;
 }
 
+.secondPageContent {
+	position: relative;
+	top: 25%;
+	left: 10%;
+	width: 100%;
+}
 
