@@ -1,11 +1,10 @@
 html {
-	/*Pad the sides of the site left and right*/
-	padding: 0% 10% 0% 10%;
+    margin: 0;
+    padding: 0;
+    color: white;
 }
 
 body {
-	border: 5px solid powderblue;
-	padding: 10px;
 	font-family: Tahoma, Geneva, sans-serif;
 }
 
@@ -24,14 +23,19 @@ h1 {
     clear: both;
 }
 
-.justinPic {
+.keyImage img {
+	padding: 0;
+    display: block;
+    margin: 0 auto;
+    max-height: 100%;
+    max-width: 100%;
 }
 
-.justinPic img {
-	float: right;
-	height: 300px;
-	border-radius: 3%;
+.frontImageContent {
+	position: absolute; 
+   	top: 67%; 
+   	left: 10%; 
+   	width: 100%;
 }
-
 
 
