@@ -3,7 +3,7 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-	font-family: Tahoma, Geneva, sans-serif;
+	font-family: Verdanda, Geneva, sans-serif;
 }
 
 h1 {
@@ -51,5 +51,10 @@ h1 {
 	top: 25%;
 	left: 10%;
 	width: 100%;
+}
+
+.customBorder {
+	padding: 20px 20px 20px 20px;
+	background-color: rgba(0, 0, 0, 0.5);
 }
 
