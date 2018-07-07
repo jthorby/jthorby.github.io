@@ -59,15 +59,14 @@ h1 {
 }
 
 @keyframes triangleDownAnimation {
-	0% { top: 72%; }
+	0% { top: 73%; }
 	80% { top: 75%; }
-	100% {  top: 72%; }
+	100% {  top: 73%; }
 }
 
 .triangleContainer {
 	position: relative;
-	top: 72%;
-	margin: auto;
+	top: 73%;
 	width: 50%;
 	animation-name: triangleDownAnimation;
 	animation-duration: 2.5s;
@@ -77,9 +76,13 @@ h1 {
 .downArrow {
 	width: 0;
 	height: 0;
-	border-left: 50px solid transparent;
-	border-right: 50px solid transparent;
-	border-top: 25px solid rgba(255, 255, 255, 0.5);
+	border-left: 60px solid transparent;
+	border-right: 60px solid transparent;
+	border-top: 35px solid rgba(255, 255, 255, 0.5);
+}
+
+.downArrow:hover {
+	border-top: 35px solid rgba(255, 255, 255, 0.7);
 }
 
 .center {
