@@ -39,16 +39,23 @@ h1 {
 	overflow: hidden;
 }
 
+@keyframes loadContent {
+	0% { left: 100%; }
+	100% { left: 10%; }
+}
+
 .firstPageContent {
 	position: relative;
    	top: 67%; 
    	left: 10%; 
    	width: 100%;
+   	animation-name: loadContent;
+   	animation-duration: 1s;
 }
 
 .secondPageContent {
 	position: relative;
-	top: 25%;
+	top: 15%;
 	left: 10%;
 	width: 100%;
 }
