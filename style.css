@@ -12,7 +12,7 @@ h1 {
 
 .column {
 	float: left;
-	width: 50%;
+	width: 40%;
 }
 
 .row:after {
@@ -62,20 +62,20 @@ h1 {
 
 .customBorder {
 	padding: 20px 20px 20px 20px;
-	background-color: rgba(0, 0, 0, 0.5);
+	background-color: rgba(0, 0, 0, 0);
 }
 
-@keyframes triangleDownAnimation {
+@keyframes downArrowAnimation {
 	0% { top: 73%; }
 	80% { top: 75%; }
 	100% {  top: 73%; }
 }
 
-.triangleContainer {
+.downArrowContainer {
 	position: relative;
 	top: 73%;
 	width: 50%;
-	animation-name: triangleDownAnimation;
+	animation-name: downArrowAnimation;
 	animation-duration: 2.5s;
 	animation-iteration-count: infinite;
 }
@@ -94,5 +94,9 @@ h1 {
 
 .center {
 	margin: auto;
+}
+
+.underline {
+	border-bottom: solid 2px white;
 }
 
