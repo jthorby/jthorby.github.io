@@ -2,12 +2,12 @@
 <html>
 	<head>
 		<link rel="stylesheet" href="style.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	</head>
 
 	<body>
-
 		<!-- Front page -->
-		<div class="image1 background">		
+		<div class="image1 background">
 			<div class="firstPageContent customBorder">
 				<div>
 					<h1 class="underline">Justin Thorby</h1>
@@ -16,7 +16,7 @@
 			</div>
 
 			<!-- Animated scoll down arrow -->
-			<div id="scrollDown" onclick="scrollDown()" class="downArrowContainer center"> 
+			<div id="scrollDown" onclick="scrollDown()" class="downArrowContainer center">
 				<div class="downArrow center">
 				</div>
 			</div>
@@ -25,7 +25,7 @@
 		<!-- Second page -->
 		<div class="image2 background">
 			<div class="secondPageContent customBorder">
-				<h1 class="underline">About me</h1>
+				<h1 id="pageHeading" class="underline">About me</h1>
 
 				<div style="padding-top: 5%" class="row">
 					<div class="column">
@@ -42,9 +42,11 @@
 		<script type="text/javascript">
 			function scrollDown() {
 				window.scrollBy(0, window.innerHeight);
-			}
+			};
+			$(document).ready(function(){
+				});
+			});
 		</script>
 
 	</body>
 </html>
-

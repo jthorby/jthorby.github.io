@@ -46,8 +46,8 @@ h1 {
 
 .firstPageContent {
 	position: relative;
-   	top: 67%; 
-   	left: 10%; 
+   	top: 67%;
+   	left: 10%;
    	width: 100%;
    	animation-name: loadContent;
    	animation-duration: 1s;
@@ -66,14 +66,14 @@ h1 {
 }
 
 @keyframes downArrowAnimation {
-	0% { top: 73%; }
-	80% { top: 75%; }
-	100% {  top: 73%; }
+	0% { top: 68%; }
+	80% { top: 70%; }
+	100% {  top: 68%; }
 }
 
 .downArrowContainer {
 	position: relative;
-	top: 73%;
+	top: 68%;
 	width: 50%;
 	animation-name: downArrowAnimation;
 	animation-duration: 2.5s;
@@ -99,4 +99,3 @@ h1 {
 .underline {
 	border-bottom: solid 2px white;
 }
-
