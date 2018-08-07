@@ -8,7 +8,6 @@ html, body {
 
 h1 {
 	font-size: 250%;
-	padding-bottom: 2px;
 	margin: 0;
 }
 
@@ -26,6 +25,29 @@ p {
 
 .experience {
 	background-color: rgba(255, 133, 50, 1);
+}
+
+.projects {
+	background-color: rgba(255, 181, 50, 1);
+}
+
+.card {
+	border: 2px solid white;
+	border-radius: 5%;
+	width: 20em;
+	height: 20em;
+	background-color: rgb(50, 125, 145);
+}
+
+.cardImage {
+	transform: translateY(12.5%);
+	border-radius: 5%;
+	vertical-align: middle;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	overflow:hidden;
+	width: 100%;
 }
 
 .column {
@@ -75,7 +97,7 @@ p {
 
 .mySlides {
 	width: 100%;
-	height: 40em;
+	height: 30em;
 	display: block;
 	position: relative;
 	object-fit: cover;

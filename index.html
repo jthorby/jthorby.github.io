@@ -22,10 +22,7 @@
 	    <div class="page title">
 	    	<h1>Justin Thorby</h1>
 	    	<h3>BSc, Computer Science</h3>
-	    </div>
-
-	    <div class="page title">
-	    	<p>Hi there! I'm Justin, a computer science graduate from the University of Canterbury. I have a passion for all things technology and am currently searching for a position in the tech industry.</p>
+				<p style="padding-top: 1em">Hi there! I'm Justin, a computer science graduate from the University of Canterbury. I have a passion for all things technology and am currently searching for a position in the tech industry.</p>
 	    </div>
 
 	    <div class="page about">
@@ -39,6 +36,16 @@
 	    	<p>Java, Python, C</p>
 	    </div>
 
+			<div class="page projects">
+				<h2>My Projects</h2>
+
+				<div>
+					<div class="card">
+						<img class="cardImage" src="302Images/GameLogo2.gif">
+					</div>
+				</div>
+			</div>
+
 
 		<script type="text/javascript">
 			var slideIndex = 0;
@@ -50,20 +57,18 @@
 			    var tags = document.getElementsByClassName("tag");
 
 			    for (i = 0; i < slides.length; i++) {
-			      slides[i].style.display = "none"; 
+			      slides[i].style.display = "none";
 			      tags[i].style.display = "none"
 			    }
 
 			    slideIndex++;
 
-			    if (slideIndex > slides.length) {slideIndex = 1} 
+			    if (slideIndex > slides.length) {slideIndex = 1}
 
-			    slides[slideIndex-1].style.display = "block"; 
-				// tags[slideIndex-1].style.display = "block";
+			    slides[slideIndex-1].style.display = "block";
+				tags[slideIndex-1].style.display = "block";
 			    setTimeout(carousel, 10000);
 			}
 		</script>
-
 	</body>
 </html>
-
