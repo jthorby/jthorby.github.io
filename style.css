@@ -12,12 +12,20 @@ h1 {
 	margin: 0;
 }
 
+p {
+	font-size: 115%;
+}
+
 .title {
-	padding-top: 2em;
-	padding-bottom: 1em;
-	background-color: rgb(14, 129, 158);
-	animation-name: transitionLeft;
-	animation-duration: 1s;
+	background-color: rgba(14, 129, 158, 1);
+}
+
+.about {
+	background-color: rgba(104, 159, 246, 1);
+}
+
+.experience {
+	background-color: rgba(255, 133, 50, 1);
 }
 
 .column {
@@ -32,8 +40,10 @@ h1 {
 }
 
 .page {
-	padding-left: 12.5%;
-	padding-right: 12.5%;
+	padding-top: 2em;
+	padding-bottom: 1em;
+	padding-left: 20%;
+	padding-right: 20%;
 }
 
 .myCarousel {
@@ -42,7 +52,7 @@ h1 {
 }
 
 .tag {
-	left: 12.5%;
+	left: 20%;
 	bottom: 5%;
 	position: absolute;
 	z-index: 1000;
