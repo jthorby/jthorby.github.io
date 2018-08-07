@@ -5,43 +5,46 @@
 	</head>
 
 	<body>
+		<div class="myCarousel">
+			<div class="myCarousel">
+				<img class="mySlides fade" src="eileenDonan.JPG">
+				<div class="tag fade">Eileen Donan Castle, Scotland</div>
 
-		<!-- Front page -->
-		<div class="image1 background">		
-			<div class="firstPageContent customBorder">
-				<div>
-					<h1 class="underline">Justin Thorby</h1>
-					<h2>BSc, Computer Science</h2>
-				</div>
+				<img class="mySlides fade" src="skyeSunRise.JPG">
+				<div class="tag fade">Isle of Skye, Scotland</div>
+
+				<img class="mySlides fade" src="interlaken.JPG">
+				<div class="tag fade">Interlaken, Switzerland</div>
 			</div>
+	    </div>
 
-			<!-- Animated scoll down arrow -->
-			<div id="scrollDown" onclick="scrollDown()" class="downArrowContainer center"> 
-				<div class="downArrow center">
-				</div>
-			</div>
-		</div>
+	    <div class="page title">
+	    	<h1>Justin Thorby</h1>
+	    	<h3>BSc, Computer Science</h3>
+	    </div>
 
-		<!-- Second page -->
-		<div class="image2 background">
-			<div class="secondPageContent customBorder">
-				<h1 class="underline">About me</h1>
-
-				<div style="padding-top: 5%" class="row">
-					<div class="column">
-						<h2>Education</h2>
-					</div>
-
-					<div class="column">
-						<h2>Hobbies</h2>
-					</div>
-				</div>
-			</div>
-		</div>
 
 		<script type="text/javascript">
-			function scrollDown() {
-				window.scrollBy(0, window.innerHeight);
+			var slideIndex = 0;
+			carousel();
+
+			function carousel() {
+			    var i;
+			    var slides = document.getElementsByClassName("mySlides");
+			    var tags = document.getElementsByClassName("tag");
+
+			    for (i = 0; i < slides.length; i++) {
+			      slides[i].style.display = "none"; 
+			      tags[i].style.display = "none"
+			    }
+
+			    slideIndex++;
+
+			    if (slideIndex > slides.length) {slideIndex = 1} 
+
+			    slides[slideIndex-1].style.display = "block"; 
+				tags[slideIndex-1].style.display = "block";
+			    setTimeout(carousel, 10000);
 			}
 		</script>
 
