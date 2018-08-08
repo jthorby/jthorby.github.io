@@ -55,13 +55,16 @@
 
 			<div>
 				<div class="card">
-					<img class="cardImage" src="302Images/GameLogo2.gif" onclick="on()">
+					<img class="cardImage" src="302Images/GameLogo2.gif" onclick="showOverlay()">
 				</div>
 			</div>
 
-			<div id="overlay" onclick="off()">
+			<div id="overlay">
 				<div class="overlayContainer">
 					<div style="margin 0 auto">
+						<img src="closeIcon.png" class="closeButton" onclick="hideOverlay()"></img>
+						<img src="rightArrow.png" class="carouselButton carouselLeftButton" onclick="plusDivs(-1)"></img>
+						<img src="rightArrow.png" class="carouselButton carouselRightButton" onclick="plusDivs(-1)"></img>
 						<img src="302Images/highSeasHomeSnapshot.PNG" class="overlayImage"></img>
 						<img src="302Images/highSeasArcadeRaceSnapshot.PNG" class="overlayImage"></img>
 						<div class="overlayTextContainer">
@@ -78,23 +81,22 @@
 		<div class="page contact">
 			<h2>Connect with me!</h2>
 			<a href="https://github.com/jthorby" target="_blank"><img src="githubLogo.PNG" title="My Github" alt="My Github"></a>
+			<br><br>
+			<div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> and <a href="https://www.flaticon.com/authors/robin-kylander" title="Robin Kylander">Robin Kylander</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
 		</div>
 
 
 		<script type="text/javascript">
 			var slideIndex1 = 0;
-			var slideIndex2 = 0;
 			var slideIndex3 = 0;
 
 			var travelSlides = document.getElementsByClassName("mySlides");
-			var overlaySlides = document.getElementsByClassName("overlayImage");
 			var tags = document.getElementsByClassName("tag");
 
 			carouselHelper();
 
 			function carouselHelper() {
 				slideIndex1 = carousel(travelSlides, slideIndex1);
-				slideIndex2 = carousel(overlaySlides, slideIndex2);
 				slideIndex3 = carousel(tags, slideIndex3);
 				setTimeout(carouselHelper, 10000)
 			}
@@ -115,13 +117,31 @@
 				return slideIndex;
 			}
 
-			function on() {
+			function showOverlay() {
 				document.getElementById("overlay").style.display = "block";
 			}
 
-		    function off() {
+		    function hideOverlay() {
 		        document.getElementById("overlay").style.display = "none";
 		    }
+
+		    var slideIndex = 1;
+			showDivs(slideIndex);
+
+			function plusDivs(n) {
+			    showDivs(slideIndex += n);
+			}
+
+			function showDivs(n) {
+			    var i;
+			    var x = document.getElementsByClassName("overlayImage");
+			    if (n > x.length) {slideIndex = 1} 
+			    if (n < 1) {slideIndex = x.length} ;
+			    for (i = 0; i < x.length; i++) {
+			        x[i].style.display = "none"; 
+			    }
+			    x[slideIndex-1].style.display = "block"; 
+			}
 		</script>
 	</body>
 </html>

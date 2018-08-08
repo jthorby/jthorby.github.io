@@ -121,7 +121,6 @@ p {
     bottom: 0;
     background-color: rgba(0,0,0,0.5); /* Black background with opacity */
     z-index: 3; /* Specify a stack order in case you're using a different order for other elements */
-    cursor: pointer; /* Add a pointer on hover */
 }
 
 .overlayContainer {
@@ -131,7 +130,6 @@ p {
 	vertical-align: middle;
 	background-color: rgb(130, 130, 130); 
 	border: solid white;
-
 }
 
 .overlayTextContainer {
@@ -147,4 +145,39 @@ p {
 .bulletPoints {
 	list-style-type: disc;
 	padding-left: 0;
+}
+
+.carouselButton {
+	background-color: rgb(130, 130, 130); 
+	position: absolute;
+	z-index: 2;
+	top: 50%;
+}
+
+.carouselButton:hover {
+	background-color: rgb(180, 180, 180); 
+	cursor: pointer;
+}
+
+.carouselLeftButton {
+	transform: rotateY(180deg);
+	left: 1%;
+}
+
+.carouselRightButton {
+	right: 1%;
+}
+
+.closeButton {
+	background-color: rgb(130, 130, 130); 
+	border-radius: 50%;
+	position: absolute;
+	z-index: 2;
+	right: 2%;
+	top: 2%;
+}
+
+.closeButton:hover {
+	background-color: rgb(180, 180, 180); 
+	cursor: pointer;
 }
