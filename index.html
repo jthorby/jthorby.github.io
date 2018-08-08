@@ -35,13 +35,13 @@
 	    	<h2>Programming Experience</h2>
 	    	<ul class="bulletPoints">
     			<div class="row">
-    				<div class="column">
+    				<div class="column" style="width: 40%">
 				    	<li><p>Java</p></li>
 				    	<li><p>Python</p></li>
 				    	<li><p>C</p></li>
     				</div>
 
-    				<div class="column">
+    				<div class="column" style="width: 40%">
 				    	<li><p>SQL</p></li>
 				    	<li><p>HTML, CSS, JS - This site was built without any third party frameworks</p></li>
 				    	<li><p>Modern Javascript frameworks - Vue.JS, Node.JS </p></li>
@@ -53,26 +53,44 @@
 		<div class="page projects">
 			<h2>My Projects</h2>
 
-			<div>
-				<div class="card">
-					<img class="cardImage" src="302Images/GameLogo2.gif" onclick="showOverlay()">
+			<div class="row">
+				<div class="column">
+					<div class="card">
+						<img class="cardImage" src="302Images/GameLogo2.gif" onclick="showOverlay()">
+					</div>
 				</div>
-			</div>
 
-			<div id="overlay">
-				<div class="overlayContainer">
-					<div style="margin 0 auto">
-						<img src="closeIcon.png" class="closeButton" onclick="hideOverlay()"></img>
-						<img src="rightArrow.png" class="carouselButton carouselLeftButton" onclick="plusDivs(-1)"></img>
-						<img src="rightArrow.png" class="carouselButton carouselRightButton" onclick="plusDivs(-1)"></img>
-						<img src="302Images/highSeasHomeSnapshot.PNG" class="overlayImage"></img>
-						<img src="302Images/highSeasArcadeRaceSnapshot.PNG" class="overlayImage"></img>
-						<div class="overlayTextContainer">
-							<p style="padding: 0; margin: 0">
-								For part 2 of the group project, the product pivoted from a race visualiser to a multiplayer sailing game.<br>
-								Our team created High Seas, a game which allows up to 6 players to compete in a variety of game modes. We had to build upon and re-engineer out existing java code base to build the game rather than starting from scratch which presented many challenges.
-							</p>
+				<div id="overlay">
+					<div class="overlayContainer">
+						<div style="margin 0 auto">
+							<img src="closeIcon.png" class="closeButton" onclick="hideOverlay()"></img>
+							<img src="rightArrow.png" class="carouselButton carouselLeftButton" onclick="plusDivs(-1)"></img>
+							<img src="rightArrow.png" class="carouselButton carouselRightButton" onclick="plusDivs(-1)"></img>
+							<img src="302Images/highSeasHomeSnapshot.PNG" class="overlayImage"></img>
+							<img src="302Images/highSeasArcadeRaceSnapshot.PNG" class="overlayImage"></img>
+							<div class="overlayTextContainer">
+								<p style="padding: 0; margin: 0">
+									For part 2 of the group project, the product pivoted from a race visualiser to a multiplayer sailing game.<br>
+									Our team created High Seas, a game which allows up to 6 players to compete in a variety of game modes. We had to build upon and re-engineer out existing java code base to build the game rather than starting from scratch which presented many challenges.
+								</p>
+							</div>
 						</div>
+					</div>
+				</div>
+
+				<div class="card column">
+					<div style="margin:auto">
+						<div class="raceVisionIcon">
+							raceVision.
+						</div>	
+					</div>
+				</div>
+
+				<div class="card column">
+					<div style="margin:auto">
+						<div class="raceVisionIcon">
+							other
+						</div>	
 					</div>
 				</div>
 			</div>
