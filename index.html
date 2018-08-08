@@ -33,32 +33,77 @@
 
 	    <div class="page experience">
 	    	<h2>Programming Experience</h2>
-	    	<p>Java, Python, C</p>
+	    	<ul class="bulletPoints">
+    			<div class="row">
+    				<div class="column">
+				    	<li><p>Java</p></li>
+				    	<li><p>Python</p></li>
+				    	<li><p>C</p></li>
+    				</div>
+
+    				<div class="column">
+				    	<li><p>SQL</p></li>
+				    	<li><p>HTML, CSS, JS - This site was built without any third party frameworks</p></li>
+				    	<li><p>Modern Javascript frameworks - Vue.JS, Node.JS </p></li>
+    				</div>
+    			</div>
+			</ul>
 	    </div>
 
-			<div class="page projects">
-				<h2>My Projects</h2>
+		<div class="page projects">
+			<h2>My Projects</h2>
 
-				<div>
-					<div class="card">
-						<img class="cardImage" src="302Images/GameLogo2.gif">
-					</div>
+			<div>
+				<div class="card">
+					<img class="cardImage" src="302Images/GameLogo2.gif" onclick="on()">
 				</div>
 			</div>
 
+			<div id="overlay" onclick="off()">
+				<div class="overlayContainer">
+					<div style="margin 0 auto">
+						<img src="302Images/highSeasHomeSnapshot.PNG" class="overlayImage"></img>
+						<img src="302Images/highSeasArcadeRaceSnapshot.PNG" class="overlayImage"></img>
+						<div class="overlayTextContainer">
+							<p style="padding: 0; margin: 0">
+								For part 2 of the group project, the product pivoted from a race visualiser to a multiplayer sailing game.<br>
+								Our team created High Seas, a game which allows up to 6 players to compete in a variety of game modes. We had to build upon and re-engineer out existing java code base to build the game rather than starting from scratch which presented many challenges.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="page contact">
+			<h2>Connect with me!</h2>
+			<a href="https://github.com/jthorby" target="_blank"><img src="githubLogo.PNG" title="My Github" alt="My Github"></a>
+		</div>
+
 
 		<script type="text/javascript">
-			var slideIndex = 0;
-			carousel();
+			var slideIndex1 = 0;
+			var slideIndex2 = 0;
+			var slideIndex3 = 0;
 
-			function carousel() {
+			var travelSlides = document.getElementsByClassName("mySlides");
+			var overlaySlides = document.getElementsByClassName("overlayImage");
+			var tags = document.getElementsByClassName("tag");
+
+			carouselHelper();
+
+			function carouselHelper() {
+				slideIndex1 = carousel(travelSlides, slideIndex1);
+				slideIndex2 = carousel(overlaySlides, slideIndex2);
+				slideIndex3 = carousel(tags, slideIndex3);
+				setTimeout(carouselHelper, 10000)
+			}
+
+			function carousel(slides, slideIndex) {
 			    var i;
-			    var slides = document.getElementsByClassName("mySlides");
-			    var tags = document.getElementsByClassName("tag");
 
 			    for (i = 0; i < slides.length; i++) {
 			      slides[i].style.display = "none";
-			      tags[i].style.display = "none"
 			    }
 
 			    slideIndex++;
@@ -66,9 +111,17 @@
 			    if (slideIndex > slides.length) {slideIndex = 1}
 
 			    slides[slideIndex-1].style.display = "block";
-				tags[slideIndex-1].style.display = "block";
-			    setTimeout(carousel, 10000);
+
+				return slideIndex;
 			}
+
+			function on() {
+				document.getElementById("overlay").style.display = "block";
+			}
+
+		    function off() {
+		        document.getElementById("overlay").style.display = "none";
+		    }
 		</script>
 	</body>
 </html>

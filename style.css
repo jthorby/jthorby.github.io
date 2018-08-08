@@ -31,12 +31,19 @@ p {
 	background-color: rgba(255, 181, 50, 1);
 }
 
+.contact {
+	background-color: rgba(130, 130, 130, 1);
+}
+
 .card {
 	border: 2px solid white;
-	border-radius: 5%;
 	width: 20em;
 	height: 20em;
 	background-color: rgb(50, 125, 145);
+}
+
+.card:hover {
+	opacity: 0.8;
 }
 
 .cardImage {
@@ -77,7 +84,7 @@ p {
 	left: 20%;
 	bottom: 5%;
 	position: absolute;
-	z-index: 1000;
+	z-index: 2;
 	padding: 1em;
 	font-style: italic;
 	color: white;
@@ -102,4 +109,42 @@ p {
 	position: relative;
 	object-fit: cover;
 	overflow-y: hidden;
+}
+
+#overlay {
+	position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 3; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+}
+
+.overlayContainer {
+	transform: translateY(5%);
+	width: 60%;		
+	margin: 0 auto;
+	vertical-align: middle;
+	background-color: rgb(130, 130, 130); 
+	border: solid white;
+
+}
+
+.overlayTextContainer {
+	margin: 0;
+	padding: 1em;
+}
+
+.overlayImage {
+	max-height: 100%;
+	width: 100%;
+}
+
+.bulletPoints {
+	list-style-type: disc;
+	padding-left: 0;
 }
