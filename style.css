@@ -63,11 +63,11 @@ p {
 }
 
 .experience {
-	background-color: rgba(255, 133, 50, 1);
+	background-color: rgba(255, 181, 50, 1);
 }
 
 .projects {
-	background-color: rgba(255, 181, 50, 1);
+	background-color: rgba(255, 133, 50, 1);
 }
 
 .contact {
@@ -94,6 +94,16 @@ p {
 	object-fit: cover;
 	overflow:hidden;
 	width: 100%;
+}
+
+.cardText {
+	font-size: 250%;
+	font-stretch: semi-condensed;
+	font-weight: bold;
+	text-align: center;
+	vertical-align: middle;
+	position: relative;
+	padding: 10%;
 }
 
 @keyframes expandContainer {
@@ -153,13 +163,4 @@ p {
 .bulletPoints {
 	list-style-type: disc;
 	padding-left: 0;
-}
-
-.raceVisionIcon {
-	font-size: 250%;
-	font-stretch: semi-condensed;
-	font-weight: bold;
-	text-align: center;
-	vertical-align: middle;
-	position: relative;
 }
