@@ -6,6 +6,10 @@ html, body {
 	font-family: Verdanda, Geneva, sans-serif;
 }
 
+* {
+	box-sizing: border-box;
+}
+
 h1 {
 	font-size: 250%;
 	margin: 0;
@@ -13,6 +17,41 @@ h1 {
 
 p {
 	font-size: 115%;
+}
+
+.column {
+	float: left;
+}
+
+.row:after {
+	content: "";
+    display: table;
+    clear: both;
+}
+
+.page {
+	padding-top: 2em;
+	padding-bottom: 1em;
+	padding-left: 20%;
+	padding-right: 20%;
+}
+
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+[class*="col-"] {
+    float: left;
+    padding: 15px;
 }
 
 .title {
@@ -37,10 +76,11 @@ p {
 
 .card {
 	border: 2px solid white;
-	width: 20em;
-	height: 20em;
 	background-color: rgb(50, 125, 145);
-	margin-right: 3em;
+	height: 100%;
+  	overflow: hidden;
+  	position: relative;
+  	cursor: pointer;
 }
 
 .card:hover {
@@ -48,8 +88,6 @@ p {
 }
 
 .cardImage {
-	transform: translateY(12.5%);
-	border-radius: 5%;
 	vertical-align: middle;
 	display: block;
 	position: relative;
@@ -58,21 +96,22 @@ p {
 	width: 100%;
 }
 
-.column {
-	float: left;
+@keyframes expandContainer {
+	0% { opacity: 0 }
+	100% { opacity: 1 }
 }
 
-.row:after {
-	content: "";
-    display: table;
-    clear: both;
+#detailedCardContainer {
+	display: none;
+	animation-name: expandContainer;
+	animation-duration: 1s;
+	animation-iteration-count: 1;
+	z-index: -1;
 }
 
-.page {
-	padding-top: 2em;
-	padding-bottom: 1em;
-	padding-left: 20%;
-	padding-right: 20%;
+#detailedCardImage {
+	max-width: 100%;
+	cursor: pointer;
 }
 
 .myCarousel {
@@ -80,7 +119,7 @@ p {
 	background-color: black;
 }
 
-.tag {
+.headerSlideShowTag {
 	left: 20%;
 	bottom: 5%;
 	position: absolute;
@@ -91,56 +130,20 @@ p {
 }
 
 .fade {
-	animation-name: fadeIn;
+	animation-name: fadeInOut;
 	animation-duration: 10s;
 }
 
-@keyframes fadeIn {
+@keyframes fadeInOut {
 	0% { opacity: 0; }
 	25% { opacity: 1; }
 	75% { opacity: 1; }
 	100% { opacity: 0; }
 }
 
-.mySlides {
+.headerSlideshow {
 	width: 100%;
 	height: 30em;
-	display: block;
-	position: relative;
-	object-fit: cover;
-	overflow-y: hidden;
-}
-
-#overlay {
-	position: fixed; 
-    display: none; 
-    width: 100%;
-    height: 100%; 
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0,0,0,0.5);
-    z-index: 3; 
-}
-
-.overlayContainer {
-	transform: translateY(5%);
-	width: 60%;		
-	margin: 0 auto;
-	vertical-align: middle;
-	background-color: rgb(130, 130, 130); 
-	border: solid white;
-}
-
-.overlayTextContainer {
-	margin: 0;
-	padding: 1em;
-	height: 60%;
-}
-
-.overlayImage {
-	width: 100%;
-	height: 45em;
 	display: block;
 	position: relative;
 	object-fit: cover;
@@ -150,41 +153,6 @@ p {
 .bulletPoints {
 	list-style-type: disc;
 	padding-left: 0;
-}
-
-.carouselButton {
-	background-color: rgb(130, 130, 130); 
-	position: absolute;
-	z-index: 2;
-	top: 50%;
-}
-
-.carouselButton:hover {
-	background-color: rgb(180, 180, 180); 
-	cursor: pointer;
-}
-
-.carouselLeftButton {
-	transform: rotateY(180deg);
-	left: 1%;
-}
-
-.carouselRightButton {
-	right: 1%;
-}
-
-.closeButton {
-	background-color: rgb(130, 130, 130); 
-	border-radius: 50%;
-	position: absolute;
-	z-index: 2;
-	right: 2%;
-	top: 2%;
-}
-
-.closeButton:hover {
-	background-color: rgb(180, 180, 180); 
-	cursor: pointer;
 }
 
 .raceVisionIcon {

@@ -8,14 +8,14 @@
 	<body>
 		<div class="myCarousel">
 			<div class="myCarousel">
-				<img class="mySlides fade" src="eileenDonan.JPG">
-				<div class="tag fade">Eileen Donan Castle, Scotland</div>
+				<img class="headerSlideshow fade" src="eileenDonan.JPG">
+				<div class="headerSlideShowTag fade">Eileen Donan Castle, Scotland</div>
 
-				<img class="mySlides fade" src="skyeSunRise.JPG">
-				<div class="tag fade">Isle of Skye, Scotland</div>
+				<img class="headerSlideshow fade" src="skyeSunRise.JPG">
+				<div class="headerSlideShowTag fade">Isle of Skye, Scotland</div>
 
-				<img class="mySlides fade" src="interlaken.JPG">
-				<div class="tag fade">Interlaken, Switzerland</div>
+				<img class="headerSlideshow fade" src="interlaken.JPG">
+				<div class="headerSlideShowTag fade">Interlaken, Switzerland</div>
 			</div>
 	    </div>
 
@@ -53,45 +53,46 @@
 		<div class="page projects">
 			<h2>My Projects</h2>
 
+			<!-- Row for project cards -->
 			<div class="row">
-				<div class="column">
-					<div class="card">
-						<img class="cardImage" src="302Images/GameLogo2.gif" onclick="showOverlay()">
+				<div class="col-4">
+					<div class="card" style="margin:auto" onclick="toggleCardDetail(0)">
+						<img src="302Images/visualiserSnapshot.png" class="cardImage"></img>	
 					</div>
 				</div>
 
-				<div id="overlay">
-					<div class="overlayContainer">
-						<div style="margin 0 auto">
-							<img src="closeIcon.png" class="closeButton" onclick="hideOverlay()"></img>
-							<img src="rightArrow.png" class="carouselButton carouselLeftButton" onclick="plusDivs(-1)"></img>
-							<img src="rightArrow.png" class="carouselButton carouselRightButton" onclick="plusDivs(-1)"></img>
-							<img src="302Images/highSeasHomeSnapshot.PNG" class="overlayImage"></img>
-							<img src="302Images/highSeasArcadeRaceSnapshot.PNG" class="overlayImage"></img>
-							<div class="overlayTextContainer">
-								<p style="padding: 0; margin: 0">
-									For part 2 of the group project, the product pivoted from a race visualiser to a multiplayer sailing game.<br>
-									Our team created High Seas, a game which allows up to 6 players to compete in a variety of game modes. We had to build upon and re-engineer out existing java code base to build the game rather than starting from scratch which presented many challenges.
-								</p>
-							</div>
-						</div>
+				<div class="col-4">
+					<div class="card" onclick="toggleCardDetail(1)">
+						<img class="cardImage" src="302Images/GameLogo2.gif">
 					</div>
 				</div>
 
-				<div class="card column">
-					<div style="margin:auto">
+				<div class="col-4" style="height:100%">
+					<div class="card" onclick="toggleCardDetail(2)">
 						<div class="raceVisionIcon">
-							raceVision.
+							Coming soon...
 						</div>	
 					</div>
 				</div>
+			</div>
 
-				<div class="card column">
-					<div style="margin:auto">
-						<div class="raceVisionIcon">
-							other
-						</div>	
-					</div>
+			<!-- Detail view for currently selected card -->
+			<div id="detailedCardContainer">
+				<img id="detailedCardImage" onclick="toggleCardDetail(-1)"></img>
+
+				<div class="info">
+					<h3>raceVision</h3>
+					<p>For part 1 of my final year group software engineering project, we built raceVision. The application could display the races for the 2018 America's Cup as they happened live.</p>	
+				</div>
+
+				<div class="info">
+					<h3>High Seas</h3>
+					<p>For part 2 of my final year group software engineering project, we built High Seas. Due to the 2018 America's Cup finishing half way through the year, we were instructed to pivot the product to a multiplayer sailing game whilst retaining much of the existing Java code base. Many challenges presented themselves with this approach which provided an interesting learning experience.</p>
+				</div>
+
+				<div class="info">
+					<h3>Simple Android fitness logger</h3>
+					<p>I recently began working on a simple android application for logging my exercise as I train for the upcoming marathon.</p>
 				</div>
 			</div>
 		</div>
@@ -105,20 +106,22 @@
 
 
 		<script type="text/javascript">
-			var slideIndex1 = 0;
-			var slideIndex3 = 0;
+			var headerSlideshowSlideIndex = 0;
+			var headerSlideshowheaderSlideShowTagIndex = 0;
 
-			var travelSlides = document.getElementsByClassName("mySlides");
-			var tags = document.getElementsByClassName("tag");
+			var travelSlides = document.getElementsByClassName("headerSlideshow");
+			var headerSlideShowTags = document.getElementsByClassName("headerSlideShowTag");
 
-			carouselHelper();
+			carouselSetup();
 
-			function carouselHelper() {
-				slideIndex1 = carousel(travelSlides, slideIndex1);
-				slideIndex3 = carousel(tags, slideIndex3);
-				setTimeout(carouselHelper, 10000)
+			function carouselSetup() {
+				headerSlideshowSlideIndex = carousel(travelSlides, headerSlideshowSlideIndex);
+				headerSlideshowheaderSlideShowTagIndex = carousel(headerSlideShowTags, headerSlideshowheaderSlideShowTagIndex);
+				setTimeout(carouselSetup, 10000)
 			}
 
+			/*  Display the current slide in the carousel
+			*/
 			function carousel(slides, slideIndex) {
 			    var i;
 
@@ -135,30 +138,51 @@
 				return slideIndex;
 			}
 
-			function showOverlay() {
-				document.getElementById("overlay").style.display = "block";
+			var currentDetailedCard = -1;
+
+			/*  Toggle the expanded view for a project card.
+				If the received cardIndex is -1, close the expanded view.
+			*/
+			function toggleCardDetail(cardIndex) {
+				var container = document.getElementById("detailedCardContainer");
+				var image = document.getElementById("detailedCardImage")
+				var state = container.style.display;
+
+				switch (cardIndex) {
+					case 0: image.src="302Images/visualiserSnapshot.png"; break;
+					case 1: image.src="302Images/HighSeasArcadeRaceSnapshot.png"; break;
+					default: image.src="";
+				}
+
+				if (cardIndex == -1) { 
+					container.style.display = "none"
+					currentDetailedCard = -1
+				} else {
+					if (state == "none" || cardIndex != currentDetailedCard) {
+						container.style.display = "block";
+						currentDetailedCard = cardIndex;
+						displayCardInfo(cardIndex);
+					} else {
+						container.style.display = "none"
+						currentDetailedCard = -1
+						displayCardInfo(-1);
+					}
+				}
 			}
 
-		    function hideOverlay() {
-		        document.getElementById("overlay").style.display = "none";
-		    }
+			/*  Display the associated text for an expanded project card.
+			*/
+			function displayCardInfo(index) {
+				var i;
+				infos = document.getElementsByClassName("info");
 
-		    var slideIndex = 1;
-			showDivs(slideIndex);
-
-			function plusDivs(n) {
-			    showDivs(slideIndex += n);
-			}
-
-			function showDivs(n) {
-			    var i;
-			    var x = document.getElementsByClassName("overlayImage");
-			    if (n > x.length) {slideIndex = 1} 
-			    if (n < 1) {slideIndex = x.length} ;
-			    for (i = 0; i < x.length; i++) {
-			        x[i].style.display = "none"; 
+			    for (i = 0; i < infos.length; i++) {
+			    	if (i == index) {
+			      		infos[i].style.display = "block";
+			    	} else {
+			    		infos[i].style.display = "none";
+			    	}
 			    }
-			    x[slideIndex-1].style.display = "block"; 
 			}
 		</script>
 	</body>
