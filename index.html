@@ -49,7 +49,7 @@
 
 	    	<br><br>I really enjoy cooking and baking, there's almost always something fresh in my cupboard.
 	    	If the weather isn't playing its part, you will probably find me gaming, reading, or tinkering with my PC setup.
-	    	
+
 	    	<br><br>I also love to get my camera out, the photos you see at the top of the page are my own from my recent travels!</p>
 	    </div>
 
@@ -113,12 +113,12 @@
 			var travelSlides = document.getElementsByClassName("headerSlideshow");
 			var headerSlideShowTags = document.getElementsByClassName("headerSlideShowTag");
 
-			carouselSetup();
+			headerSlideshow();
 
-			function carouselSetup() {
+			function headerSlideshow() {
 				headerSlideshowSlideIndex = carousel(travelSlides, headerSlideshowSlideIndex);
 				headerSlideshowheaderSlideShowTagIndex = carousel(headerSlideShowTags, headerSlideshowheaderSlideShowTagIndex);
-				setTimeout(carouselSetup, 10000)
+				setTimeout(headerSlideshow, 10000)
 			}
 
 			/*  Display the current slide in the carousel
