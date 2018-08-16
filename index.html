@@ -37,7 +37,7 @@
 	    <div class="page title">
 	    	<h1>Justin Thorby</h1>
 	    	<h3>BSc, Computer Science</h3>
-				<p style="padding-top: 1em">Hi there! I'm Justin, a computer science graduate from the University of Canterbury.<br> 
+				<p style="padding-top: 1em">Hi there! I'm Justin, a computer science graduate from the University of Canterbury.<br>
 				I have a passion for all things technology and am currently searching for a position in the tech industry.</p><br>
 				<p><a style="color:white" target="_blank" href="transcript.pdf">View my transcript here</a></p>
 				<p><a style="color:white" target="_blank" href="my-resume.pdf">View my CV here</a></p>
@@ -79,6 +79,14 @@
 				</div>
 			</div>
 
+			<div class="row">
+				<div class="col-4">
+					<div class="card" style="margin:auto" onclick="toggleCardDetail(3)">
+						<img src="rideSharingLoginSnapshot.PNG" class="cardImage"></img>
+					</div>
+				</div>
+			</div>
+
 			<!-- Detail view for currently selected card -->
 			<div id="detailedCardContainer">
 				<img id="detailedCardImage" onclick="toggleCardDetail(-1)"></img>
@@ -96,6 +104,12 @@
 				<div class="info">
 					<h3>Simple Android fitness logger</h3>
 					<p>I recently began working on a simple android application for logging my exercise as I train for the upcoming marathon.</p>
+				</div>
+
+				<div class="info">
+					<h3>Ride Sharing application</h3>
+					<p>An individual software engineering assignment I worked on was to build a basic ride sharing application in Java. The application allows a user to register their cars,
+						set up trips to or from University with custom stop points, share these trips and also book rides on other shared trips.</p>
 				</div>
 			</div>
 		</div>
@@ -152,6 +166,7 @@
 				switch (cardIndex) {
 					case 0: image.src="302Images/visualiserSnapshot.png"; break;
 					case 1: image.src="302Images/highSeasArcadeRaceSnapshot.PNG"; break;
+					case 3: image.src="rideSharingTripSnapshot.PNG"; break;
 					default: image.src="";
 				}
 
