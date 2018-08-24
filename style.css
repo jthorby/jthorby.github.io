@@ -98,6 +98,16 @@ p li {
 	width: 100%;
 }
 
+.verticalCardImage {
+	vertical-align: middle;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	overflow:hidden;
+	margin:auto;
+	width: 50%;
+}
+
 .cardText {
 	font-size: 250%;
 	font-stretch: semi-condensed;

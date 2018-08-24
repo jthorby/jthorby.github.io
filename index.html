@@ -73,7 +73,7 @@
 				<div class="col-4" style="height:100%">
 					<div class="card" onclick="toggleCardDetail(2)">
 						<div class="cardText">
-							<img class="cardImage" src="weatherApp.jpg">
+							<img class="verticalCardImage" src="weatherApp.jpg">
 						</div>
 					</div>
 				</div>
@@ -103,7 +103,7 @@
 
 				<div class="info">
 					<h3>Android Weather Application</h3>
-					<p>I recently began working on a simple android application for viewing current and forecasted weather data. The data is being pulled from the openweathermaps.org API.</p>
+					<p>I recently began working on a simple android application for viewing current and forecasted weather data. The data is being pulled from the openweathermap.org API.</p>
 				</div>
 
 				<div class="info">
@@ -162,10 +162,12 @@
 				var container = document.getElementById("detailedCardContainer");
 				var image = document.getElementById("detailedCardImage")
 				var state = container.style.display;
+				image.style="width:100%";
 
 				switch (cardIndex) {
 					case 0: image.src="302Images/visualiserSnapshot.png"; break;
 					case 1: image.src="302Images/highSeasArcadeRaceSnapshot.PNG"; break;
+					case 2: image.src="weatherApp.jpg"; image.style="width:33%;margin-left: 33.5%";break
 					case 3: image.src="rideSharingTripSnapshot.PNG"; break;
 					default: image.src="";
 				}
